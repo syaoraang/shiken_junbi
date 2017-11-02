@@ -86,5 +86,174 @@ x_1 + y_1 + z_1 &=x_0 + y_0 + z_0
 due that with $n=1$ we get $x_1 + y_1 + z_1 =x_0 + y_0 + z_0$ we can say that:
 $$x_n + y_n + z_n=x_0 + y_0 + z_0$$
 }
+\task{
+For this part we have to recall that $|A-I\lambda|=0$. So, we substract $I\lambda$ from our A to get this:
+\begin{equation*}
+\left|\begin{matrix}
+1-2\alpha-\lambda & \alpha & \alpha\\
+\alpha & 1-\alpha-\lambda & 0\\
+\alpha & 0 & 1-\alpha-\lambda
+\end{matrix}\right| = 0
+\end{equation*}
+By getting the determinant of $|A-I\lambda|$ we get $(\lambda+1)(\lambda-1+3\alpha)(\lambda-1+\alpha)=0$
+So the values of $\lambda$ are:
+\begin{itemize}
+\item{$\lambda_3 = 1-\alpha$}
+\item{$\lambda_2 = 1-3\alpha$}
+\item{$\lambda_1 = 1$}
+\end{itemize}
+Now, substituting each of the $\lambda$ values in $A-I\lambda$ and resolving the equations system we get the following vectors:\\
+For $\lambda = 1-\alpha$
+\begin{equation*}
+\left(\begin{matrix}
+1-2\alpha-(1-\alpha) & \alpha & \alpha\\
+\alpha & 1-\alpha-(1-\alpha) & 0\\
+\alpha & 0 & 1-\alpha-(1-\alpha)
+\end{matrix}\right)
+,\itab v_1 = \left(\begin{matrix}
+0\\-1\\1
+\end{matrix}\right)
+\end{equation*}
+For $\lambda = 1-3\alpha$
+\begin{equation*}
+\left(\begin{matrix}
+1-2\alpha-(1-3\alpha) & \alpha & \alpha\\
+\alpha & 1-\alpha-(1-3\alpha) & 0\\
+\alpha & 0 & 1-\alpha-(1-3\alpha)
+\end{matrix}\right)
+,\itab v_2 = \left(\begin{matrix}
+-2\\1\\1
+\end{matrix}\right)
+\end{equation*}
+For $\lambda = 1$
+\begin{equation*}
+\left(\begin{matrix}
+1-2\alpha-1 & \alpha & \alpha\\
+\alpha & 1-\alpha-1 & 0\\
+\alpha & 0 & 1-\alpha-1
+\end{matrix}\right)
+,\itab \itab \itab \itab \itab v_3 = \left(\begin{matrix}
+1\\1\\1
+\end{matrix}\right)
+\end{equation*}
+}
+\task{
+Since we can decompose any matrix $A$ in $A=Q\Lambda Q^{-1}$ where $\Lambda$ is the diagonal matrix made of the eigenvalues that we found, and $Q$ is the the matrix made of eigenvectors that we already found. We simply have to build the Q matrix and get its inverse.\\
+We have that $Q=\left(\begin{matrix}
+0 & -2 & 1\\
+-1 & 1 & 1\\
+1 & 1 & 1
+\end{matrix}\right)$, with this we only have to find $Q^{-1}$.\\
+Altought there are differents ways to get the inverse of a matrix the used for this exercise is the gauss-Jordan one. Solving we have:\\
+$$\frac{1}{6}\left(\begin{matrix}
+0 & -3 & 3\\
+-2 & 1 & 1\\
+2 & 2 & 2
+\end{matrix}\right)$$
+So this way we could represent $A$ using its eigenvalues and its eigenvectors\\
+\begin{equation*}
+A = 
+\frac{1}{6}
+\left(\begin{matrix}
+0 & -2 & 1\\
+-1 & 1 & 1\\
+1 & 1 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+1-\alpha & 0 & 0\\
+0 & 1-3\alpha & 0\\
+0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+0 & -3 & 3\\
+-2 & 1 & 1\\
+2 & 2 & 2
+\end{matrix}\right)
+\end{equation*}
+}
+\task{
+For fast analisys lets rename $\left(\begin{matrix}
+x_n\\y_n\\z_n
+\end{matrix}\right)$ as $V_n$.\\
+This way we have that \begin{equation}
+V_{n+1} = AV_n
+\end{equation}
+If we set $n=0$ we have $V_1=AV_0$. With this we can deduce that \begin{equation}
+V_n = A^nV_0
+\end{equation}\\
+If we apply it to $v_{n+1}$ we have that $V_{n+1} = AV_n=A(A^nV_0)=A^{n+1}V_0$. This way we can prove the validity of our deduction.
+So, to express $x_n + y_n + z_n$ using $x_0, y_0$ and $z_0$ we first need to find the value of $A^n$\\
+Fortunately we know that \begin{equation}
+A^n = Q\Lambda^nQ^{-1}
+\end{equation}.
+$$
+A^n = 
+\frac{1}{6}
+\left(\begin{matrix}
+0 & -2 & 1\\
+-1 & 1 & 1\\
+1 & 1 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+1-\alpha & 0 & 0\\
+0 & 1-3\alpha & 0\\
+0 & 0 & 1
+\end{matrix}\right)^n
+\left(\begin{matrix}
+0 & -3 & 3\\
+-2 & 1 & 1\\
+2 & 2 & 2
+\end{matrix}\right)$$
+$$
+A^n = 
+\frac{1}{6}
+\left(\begin{matrix}
+0 & -2 & 1\\
+-1 & 1 & 1\\
+1 & 1 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+(1-\alpha)^n & 0 & 0\\
+0 & (1-3\alpha)^n & 0\\
+0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+0 & -3 & 3\\
+-2 & 1 & 1\\
+2 & 2 & 2
+\end{matrix}\right)
+$$
+$$
+A^n = \frac{1}{6}
+\left(\begin{matrix}
+4(1-3\alpha)^n+2 & -2(1-3\alpha)^n+2 & -2(1-3\alpha)^n+2\\
+-2(1-3\alpha)^n+2 & 3(1-\alpha)^n+(1-3\alpha)^n+2 & -3(1-\alpha)^n+(1-3\alpha)^n+2\\
+-2(1-3\alpha)^n+2 & -3(1-\alpha)^n+(1-3\alpha)^n+2 & 3(1-\alpha)^n+(1-3\alpha)^n+2
+\end{matrix}\right)
+$$
+So, if we replace this in $3$ we have:
+$$
+V_n = \frac{1}{6}
+\left(\begin{matrix}
+4(1-3\alpha)^n+2 & -2(1-3\alpha)^n+2 & -2(1-3\alpha)^n+2\\
+-2(1-3\alpha)^n+2 & 3(1-\alpha)^n+(1-3\alpha)^n+2 & -3(1-\alpha)^n+(1-3\alpha)^n+2\\
+-2(1-3\alpha)^n+2 & -3(1-\alpha)^n+(1-3\alpha)^n+2 & 3(1-\alpha)^n+(1-3\alpha)^n+2
+\end{matrix}\right)V_0
+$$
+Substituying $V_n$ to its original form and multiplying we get the following:
+\begin{displaymath}
+\left(\begin{matrix}x_n\\y_n\\z_n\end{matrix}\right)=
+\frac{1}{6} \left(\begin{matrix}
+4(1-3\alpha)^n+2 & -2(1-3\alpha)^n+2 & -2(1-3\alpha)^n+2\\
+-2(1-3\alpha)^n+2 & 3(1-\alpha)^n+(1-3\alpha)^n+2 & -3(1-\alpha)^n+(1-3\alpha)^n+2\\
+-2(1-3\alpha)^n+2 & -3(1-\alpha)^n+(1-3\alpha)^n+2 & 3(1-\alpha)^n+(1-3\alpha)^n+2
+\end{matrix}\right)\left(\begin{matrix}x_0\\y_0\\z_0\end{matrix}\right)
+\end{displaymath}
+\begin{align*}
+x_n &= \frac{1}{3}((x_0+y_0+z_0)+(1-3\alpha)^n(x_0-y_0-z_0))\\
+y_n &= \frac{1}{3}(x_0+y_0+z_0)+\frac{1}{6}(1-3\alpha)^n(-2x_0+y_0+z_0)+\frac{1}{2}(1-\alpha)^n(y_0-z_0)\\
+z_n &= \frac{1}{3}(x_0+y_0+z_0)+\frac{1}{6}(1-3\alpha)^n(-2x_0+y_0+z_0)+\frac{1}{2}(1-\alpha)^n(-y_0+z_0)
+\end{align*}
+}
 \end{tasks}
 \end{document}
