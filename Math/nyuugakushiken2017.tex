@@ -1,4 +1,4 @@
-\documentclass[11pt, letterpaper]{article}
+\documentclass[letterpaper]{article}
 \title{\textbf{Tokio university's entrance exam 2017}}
 \author{Acosta Domínguez Jorge}
 \date{}
@@ -34,7 +34,7 @@ x_{n+1}\\y_{n+1}\\z_{n+1}
 \begin{matrix}
 x_n\\y_n\\z_n\\
 \end{matrix}\\
-\right)\itab n = 0, 1, 2, ...,
+\right),\itab n = 0, 1, 2, ...
 \end{equation*}
 where $x_0$, $y_0$, $z_0$ and $\alpha$ are real numbers, and
 \begin{equation*}
@@ -180,7 +180,7 @@ V_{n+1} = AV_n
 \end{equation}
 If we set $n=0$ we have $V_1=AV_0$. With this we can deduce that \begin{equation}
 V_n = A^nV_0
-\end{equation}\\
+\end{equation}
 If we apply it to $v_{n+1}$ we have that $V_{n+1} = AV_n=A(A^nV_0)=A^{n+1}V_0$. This way we can prove the validity of our deduction.
 So, to express $x_n + y_n + z_n$ using $x_0, y_0$ and $z_0$ we first need to find the value of $A^n$\\
 Fortunately we know that \begin{equation}
@@ -254,6 +254,59 @@ x_n &= \frac{1}{3}((x_0+y_0+z_0)+(1-3\alpha)^n(x_0-y_0-z_0))\\
 y_n &= \frac{1}{3}(x_0+y_0+z_0)+\frac{1}{6}(1-3\alpha)^n(-2x_0+y_0+z_0)+\frac{1}{2}(1-\alpha)^n(y_0-z_0)\\
 z_n &= \frac{1}{3}(x_0+y_0+z_0)+\frac{1}{6}(1-3\alpha)^n(-2x_0+y_0+z_0)+\frac{1}{2}(1-\alpha)^n(-y_0+z_0)
 \end{align*}
+}
+\task{
+Considering the equations above, and the condition that $0<\alpha<\frac{1}{3}$, we can write the $\lim_{n\to\infty}\left( \begin{matrix}
+x_n\\y_n\\z_n
+\end{matrix} \right)$ as
+\begin{align*}
+\frac{1}{3}(x_0+y_0+z_0) &< x_n < \frac{2}{3}(2x_0-y_0-z_0)\\
+\frac{5}{6}y_0 &< y_n < \frac{1}{3}(x_0+y_0+z_0)\\
+\frac{5}{6}z_0 &< z_n < \frac{1}{3}(x_0+y_0+z_0)
+\end{align*}
+}
+\task{
+Mental note: "Too much work to do for only 2 and half hours!"
+}
+\end{tasks}
+
+\newpage
+\subsection{Differential equations}
+A real valued function $u(x, t)$ is defined in $0 \leq x \leq 1$ and $t \geq 0$. Here $x$ and $t$ are independent.\\
+Suppose solving the following partial differential equation:
+\begin{equation}
+\frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2}
+\end{equation}
+under the following conditions:
+\begin{center}
+Boundary conditions:\itab $u(0, t) = u(1, t) = 0$\\
+Initial condition:\itab $u(x, 0) = x-x^2$
+\end{center}
+Since the constant function $u(x, t) = 0$ is obvious a solution of the partial differential equation, consider the other solutions. Answer the following questions.
+\settasks{
+	counter-format=(tsk),
+	label-width=3ex
+}
+\begin{tasks}
+\task{
+Calculate the following expression, where $n$ and $m$ are positive integers.
+$$
+\int_0^1{sin(n\pi x) sin(m\pi x) dx}
+$$
+}
+\newpage
+\end{tasks}
+\subsubsection{Resolution}
+\begin{tasks}
+\task{
+First at all, we know that $\sin(x)\sin(y) = \frac{1}{2}[\cos(x-y)-\cos(x+y)]$. So we can rewrite the expression as follows:
+\begin{equation*}
+=\frac{1}{2}\left[\int_0^1{\cos(\pi x(n-m))}dx -\cos(\pi x(n+m))}dx \right]
+\end{equation*}
+Now this is easily integrable by variable change. Applying it an resolving we get:
+\begin{equation*}
+=\frac{1}{2}\pi\left( \right)
+\end{equation*}
 }
 \end{tasks}
 \end{document}
