@@ -294,14 +294,17 @@ $$
 \int_0^1{sin(n\pi x) sin(m\pi x) dx}
 $$
 }
-\newpage
+\task{
+Supose $u(x, t ) = \epsilon(x) \rho(t)$ where $\epsilon(x)$ is a function only of $x$ and $\rho(t)$ is a function only of $t$. Express the ordinary differential equations for $\epsilon$ and $\rho$ using an arbitrary constant $C$. You may use that $f(x)$ and $g(t)$ are constant functions where $f(x)$ and $g(t)$ satisfy $f(x) = g(t)$ for arbitrary $x$ and $t$.
+}
 \end{tasks}
+\newpage
 \subsubsection{Resolution}
 \begin{tasks}
 \task{
 First at all, we know that $\sin(x)\sin(y) = \frac{1}{2}[\cos(x-y)-\cos(x+y)]$. So we can rewrite the expression as follows:
 \begin{equation*}
-=\frac{1}{2}\left[\int_0^1{\cos(\pi x(n-m))}dx -\cos(\pi x(n+m))}dx \right]
+=\frac{1}{2}\left[\int_0^1{\cos(\pi x(n-m))}dx -\cos(\pi x(n+m))dx \right]
 \end{equation*}
 Now this is easily integrable by variable change. Applying it an resolving we get:
 \begin{equation*}
