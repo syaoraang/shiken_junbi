@@ -1,0 +1,74 @@
+\documentclass[letterpaper]{article}
+\title{\textbf{Tokio university's entrance exam 2016}}
+\author{Acosta Domínguez Jorge}
+\date{}
+
+\usepackage{amsmath}
+\usepackage{tabto}
+\usepackage{tasks}
+\usepackage{geometry} %this reduces the amount of margin
+\newcommand{\itab}[0]{\hspace{2em}}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+
+\section{Mathmatics exam}
+\subsection{Lineal algebra}
+The tribonacci numbers ${T_n}$ are defined for non-negative integers n as follows.
+\begin{displaymath}
+\begin{cases}
+T_0 &= T_1 = 0\\
+T_2 &= 1\\
+T_{n+3} &= T_{n+2} + T_{n+1} + T_{n} \itab(n\geq 0)
+\end{cases}
+\end{displaymath}
+Answer the following questions.
+\begin{tasks}
+\task{
+Find the matrix $A$ that satisfies Eq. (1) for all non-negative integers $n$.
+\begin{equation}
+\left(\begin{matrix}
+T_{n+3}\\
+T_{n+2}\\
+T_{n+1}
+\end{matrix}\right)
+=A
+\left(\begin{matrix}
+T_{n+2}\\
+T_{n+1}\\
+T_{n}
+\end{matrix}\right)
+\end{equation}
+}
+\end{tasks}
+\newpage
+\subsubsection{Resolution}
+\begin{tasks}
+\task{
+The resolution for this exercise would be the below matrix $A$, since it accomplishes the equation:
+\begin{displaymath}
+A = \left(\begin{matrix}
+1 & 1 & 1\\
+1 & 0 & 0\\
+0 & 0 & 0
+\end{matrix}\right)
+\end{displaymath}
+Because resolving $1$ we have:
+\begin{displaymath}
+\left(\begin{matrix}
+T_{n+3}\\
+T_{n+2}\\
+T_{n+1}
+\end{matrix}\right) = 
+\left(\begin{matrix}
+T_{n+2} + T_{n+1} + T_{n}\\
+T_{n+2}\\
+0
+\end{matrix}\right)
+\end{displaymath}
+}
+\end{tasks}
+\end{document}
